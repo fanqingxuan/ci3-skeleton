@@ -102,7 +102,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -215,7 +215,8 @@ $config['allow_get_array'] = TRUE;
 |	1 = Error Messages (including PHP errors)
 |	2 = Debug Messages
 |	3 = Informational Messages
-|	4 = All Messages
+|   4 = Warning Messages
+|	5 = All Messages
 |
 | You can also pass an array with threshold levels to show individual error types
 |
@@ -225,7 +226,7 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = [1,4];
 
 /*
 |--------------------------------------------------------------------------
@@ -250,7 +251,7 @@ $config['log_path'] = '';
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = '';
+$config['log_file_extension'] = 'log';
 
 /*
 |--------------------------------------------------------------------------
