@@ -5,15 +5,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Service
 {
+     /**
+	 * CI_Loader
+	 *
+	 * @var	MY_Loader
+	 */
+	public $load;
+
+    private $CI;
+
     public function __construct()
     {
-        log_message('debug', "Service Class Initialized");
-        
+        $this->CI = & get_instance();
+        $this->load = $this->CI->load;
     }
- 
     function __get($key)
     {
-        $CI = & get_instance();
-        return $CI->$key;
+        return $this->CI->$key;
     }
 }
