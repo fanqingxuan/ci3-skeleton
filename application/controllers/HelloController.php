@@ -1,6 +1,6 @@
 <?php
 
-class Hello extends MY_Controller {
+class HelloController extends MY_Controller {
 
     public function __construct()
     {
@@ -8,6 +8,10 @@ class Hello extends MY_Controller {
         $this->load->service(["UserService"]);
         $this->load->service(["UserService"]);
 
+    }
+
+    public function index() {
+        $this->success("hello/index");
     }
 
     public function show() {
