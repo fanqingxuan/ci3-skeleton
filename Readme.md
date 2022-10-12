@@ -18,7 +18,7 @@ Logger::error($keywords,$message)
 - 日志级别和基础框架一样由`config.php`文件的`log_threshold`管控
 ```shell
 # Logger::warn('warn关键字',"这是错误消息")
-634684ab937a2 | WARN | 2022-10-12 11:11:07 | warn关键字 | 这是错误消息
+634684d781b4d | WARN | 2022-10-12 11:11:07 | warn关键字 | 这是错误消息
 # Logger::warn('error关键字',"error内容")
 634684d781b4d | ERROR | 2022-10-12 11:11:51 | error关键字 | error内容
 ```
@@ -46,7 +46,7 @@ class UserService extends MY_Service {
 }
 ```
 # 添加了dao层
-个人很难接收对db的操作写在model里面，对db的操作应该写在dao里面更合适一点，由controller调用service，service调用dao层，当然如果项目不复杂，可以直接controller调用dao
+个人很难接受对db的操作写在model里面，对db的操作应该写在dao里面更合适一点，由controller调用service，service调用dao层，当然如果项目不复杂，可以直接controller调用dao
 - 使用方法
 
 在service或者controller里面使用方法`$this->load->dao()`
