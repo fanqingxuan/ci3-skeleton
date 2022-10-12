@@ -11,7 +11,8 @@ class HelloController extends MY_Controller {
     }
 
     public function index() {
-        $this->success("hello/index");
+        // {"code":0,"data":[1,2,3],"message":"\u83b7\u53d6\u6570\u636e\u6210\u529f"}
+        $this->error(404,'Id不存在');
     }
 
     public function show() {
