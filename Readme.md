@@ -1,4 +1,4 @@
-基于CodeIngiter5.1.3版本开发的一个项目骨架，环境要求跟5.1.3版本一致，php5.6以及以上
+基于CodeIngiter7.1.3版本开发的一个项目骨架，环境要求php5.6以及以上
 
 本项目只对CodeIngiter做增强，不修改system目录任何代码
 
@@ -103,3 +103,7 @@ class HelloController extends MY_Controller {
 }
 >
 ```
+
+# 其它推荐
+vscode有个插件`PHP intellisense for codeigniter`,可以智能提示codeigniter的方法，包括load的方法、db等，
+model、service、dao在load后，可以智能提示load的类的公共方法、属性
