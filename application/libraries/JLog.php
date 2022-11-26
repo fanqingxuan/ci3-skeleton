@@ -1,6 +1,6 @@
 <?php
 
-class Logger {
+class JLog {
 
     private static function log($level,$keywords,$message) {
         $_str = is_array($message)?json_encode($message):$message;

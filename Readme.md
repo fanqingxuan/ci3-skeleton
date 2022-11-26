@@ -9,17 +9,17 @@
 - 每个请求的多条日志记录相同的requestId,便于根据requestId快速过滤当次请求的所有日志
 - 提供了更友好的日志类,`$message`可以是标量字符串、数字等，也可以是数组
 ```php
-Logger::debug($keywords,$message)
-Logger::info($keywords,$message)
-Logger::warn($keywords,$message)
-Logger::error($keywords,$message)
+JLog::debug($keywords,$message)
+JLog::info($keywords,$message)
+JLog::warn($keywords,$message)
+JLog::error($keywords,$message)
 ```
-- 调用Logger类写入的日志记录在`logs/app`目录,是我们的业务日志;log_message公共函数写入的日志记录在`logs/framework`目录，这个是系统日志，将两者分开可以，便于日志的管理，以及问题的快速定位
+- 调用Log类写入的日志记录在`logs/app`目录,是我们的业务日志;log_message公共函数写入的日志记录在`logs/framework`目录，这个是系统日志，将两者分开可以，便于日志的管理，以及问题的快速定位
 - 日志级别和基础框架一样由`config.php`文件的`log_threshold`管控
 ```shell
-# Logger::warn('warn关键字',"这是错误消息")
+# JLog::warn('warn关键字',"这是错误消息")
 634684d781b4d | WARN | 2022-10-12 11:11:07 | warn关键字 | 这是错误消息
-# Logger::warn('error关键字',"error内容")
+# JLog::warn('error关键字',"error内容")
 634684d781b4d | ERROR | 2022-10-12 11:11:51 | error关键字 | error内容
 ```
 

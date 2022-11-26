@@ -15,7 +15,7 @@ class UserService extends MY_Service {
     }
 
     public function getList() {
-        Logger::error("service","hello");
+        JLog::error("service","hello");
         $this->load->dao("UserDao");
         return $this->UserDao->getUser();
     }
