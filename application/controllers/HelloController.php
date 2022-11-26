@@ -18,5 +18,6 @@ class HelloController extends MY_Controller {
     public function show() {
         JLog::error("错误","这是错误消息");
         $this->success($this->UserService->getList());
+
     }
 }
