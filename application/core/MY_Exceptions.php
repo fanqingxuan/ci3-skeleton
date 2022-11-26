@@ -5,24 +5,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MY_Exceptions extends CI_Exceptions {
 
 	/**
-	 *
-	 * @var CI_Controller
-	 */
-	private $_ci;
-	/**
 	 * Class constructor
 	 *
 	 * @return	void
 	 */
 	public function __construct()
 	{
-		$this->_ci = &get_instance();
 		parent::__construct();
 	}
 
-	private function response($status_code,$message) {
+	private function response($code,$message,$status_code = 500) {
 		$response = [
-			'code'    =>  $status_code,
+			'code'    =>  $code,
 			'data'    =>  [],
 			'message' =>  $message
 		];
@@ -31,6 +25,11 @@ class MY_Exceptions extends CI_Exceptions {
 		set_status_header($status_code);
 		echo json_encode($response);
 		exit;
+	}
+
+	public function log_exception($severity, $message, $filepath, $line)
+	{
+		
 	}
 	// --------------------------------------------------------------------
 
@@ -68,7 +67,7 @@ class MY_Exceptions extends CI_Exceptions {
 		ob_end_clean();
 		log_message('error',$buffer);
 		
-		return $this->response($status_code,"服务器内部错误");
+		return $this->response($status_code,"服务器内部错误",$status_code);
 	}
 
 	public function show_exception($exception)
@@ -91,13 +90,12 @@ class MY_Exceptions extends CI_Exceptions {
 		{
 			ob_end_flush();
 		}
-
 		ob_start();
 		include($templates_path.'error_exception.php');
 		$buffer = ob_get_contents();
 		ob_end_clean();
 		log_message('error', $buffer);
-		$this->response(500,"服务器内部错误");
+		$this->response(1,$exception->getMessage(),200);
 	}
 
 	// --------------------------------------------------------------------
@@ -143,6 +141,6 @@ class MY_Exceptions extends CI_Exceptions {
 			log_message('error', $heading.': '.$page);
 		}
 
-		$this->response(404,"页面不存在");
+		$this->response(404,"页面不存在",404);
 	}
 }
