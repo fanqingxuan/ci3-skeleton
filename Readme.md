@@ -1,4 +1,4 @@
-基于CodeIngiter7.1.3版本开发的一个项目骨架，环境要求php5.6以及以上
+基于CodeIngiter3.1.13版本开发的一个项目骨架，环境要求php5.6以及以上
 
 本项目只对CodeIngiter做增强，不修改system目录任何代码
 
