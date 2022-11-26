@@ -221,6 +221,7 @@ class CI_Exceptions {
 		$buffer = ob_get_contents();
 		ob_end_clean();
 		echo $buffer;
+		exit;
 	}
 
 	// --------------------------------------------------------------------
@@ -270,6 +271,7 @@ class CI_Exceptions {
 		$buffer = ob_get_contents();
 		ob_end_clean();
 		echo $buffer;
+		exit;
 	}
 
 }
